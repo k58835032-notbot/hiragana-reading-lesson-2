@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Japanese Hiragana Practice</title>
+<style>
+  body {
+    font-family: "Segoe UI", "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+    background-color: #fff5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    color: #333;
+  }
+
+  h1 {
+    color: #b23b3b;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 60%;
+    min-width: 320px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  thead {
+    background-color: #f7b6b6;
+    color: white;
+    font-weight: bold;
+  }
+
+  th, td {
+    text-align: center;
+    padding: 12px 10px;
+    border-bottom: 1px solid #f0dada;
+    cursor: pointer;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  tr:hover {
+    background-color: #ffeaea;
+  }
+
+  td:first-child {
+    font-size: 1.1em;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>Japanese Hiragana Practice</h1>
+
+<table id="hiraganaTable">
+  <thead>
+    <tr>
+      <th>Hiragana</th>
+      <th>Reading</th>
+      <th>Meaning</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-sound="kaku"><td>かく</td><td>kaku</td><td>To write</td></tr>
+    <tr data-sound="kaigi"><td>かいぎ</td><td>kaigi</td><td>Conference</td></tr>
+    <tr data-sound="kiku"><td>きく</td><td>kiku</td><td>To listen</td></tr>
+    <tr data-sound="ikaga"><td>いかが</td><td>ikaga</td><td>How about…</td></tr>
+    <tr data-sound="kagi"><td>かぎ</td><td>kagi</td><td>Key</td></tr>
+    <tr data-sound="gikai"><td>ぎかい</td><td>gikai</td><td>Congress</td></tr>
+    <tr data-sound="iku"><td>いく</td><td>iku</td><td>To go</td></tr>
+    <tr data-sound="goi"><td>ごい</td><td>goi</td><td>Vocabulary</td></tr>
+    <tr data-sound="gogaku"><td>ごがく</td><td>gogaku</td><td>Linguistics</td></tr>
+    <tr data-sound="igai"><td>いがい</td><td>igai</td><td>Other than</td></tr>
+    <tr data-sound="ugoki"><td>うごき</td><td>ugoki</td><td>Movement</td></tr>
+    <tr data-sound="gogo"><td>ごご</td><td>gogo</td><td>Evening, p.m.</td></tr>
+    <tr data-sound="egao"><td>えがお</td><td>egao</td><td>Smile, lit. smiling face</td></tr>
+    <tr data-sound="eiga"><td>えいが</td><td>eiga</td><td>Movie</td></tr>
+    <tr data-sound="eigo"><td>えいご</td><td>eigo</td><td>English language</td></tr>
+    <tr data-sound="eki"><td>えき</td><td>eki</td><td>Station</td></tr>
+    <tr data-sound="kagaku"><td>かがく</td><td>kagaku</td><td>Science</td></tr>
+    <tr data-sound="kega"><td>けが</td><td>kega</td><td>Injury</td></tr>
+  </tbody>
+</table>
+
+<script>
+  const rows = document.querySelectorAll("#hiraganaTable tbody tr");
+
+  rows.forEach(row => {
+    row.addEventListener("click", () => {
+      const sound = row.getAttribute("data-sound");
+      const audio = new Audio(`audio/${sound}.mp3`);
+      audio.play();
+    });
+  });
+</script>
+
+</body>
+</html>
